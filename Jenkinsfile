@@ -1,11 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'yurov3000/openbmc-jenkins-agent:latest'
-            args '-u root'
-        }
-    }
-
+    agent any
+    
     parameters {
         string(name: 'QEMU_IMAGE_PATH', defaultValue: 'romulus/obmc-phosphor-image-romulus-20250916112422.static.mtd', description: 'Путь к образу OpenBMC')
         string(name: 'BMC_IP', defaultValue: 'localhost', description: 'IP адрес BMC')
@@ -13,7 +8,7 @@ pipeline {
         string(name: 'HTTPS_PORT', defaultValue: '2443', description: 'HTTPS порт')
         string(name: 'IPMI_PORT', defaultValue: '2623', description: 'IPMI порт')
     }
-
+    
     environment {
         QEMU_PID_FILE = 'qemu.pid'
         QEMU_LOG_FILE = 'qemu.log'
