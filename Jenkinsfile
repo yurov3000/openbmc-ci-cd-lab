@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters {
-        string(name: 'QEMU_IMAGE_PATH', defaultValue: 'romulus/obmc-phosphor-image-romulus-20250916112422.static.mtd', description: 'Путь к образу OpenBMC')
+        string(name: 'QEMU_IMAGE_PATH', defaultValue: 'romulus/obmc-phosphor-image-romulus-20250915064153.static.mtd', description: 'Путь к образу OpenBMC')
         string(name: 'BMC_IP', defaultValue: 'localhost', description: 'IP адрес BMC')
         string(name: 'SSH_PORT', defaultValue: '2222', description: 'SSH порт')
         string(name: 'HTTPS_PORT', defaultValue: '2443', description: 'HTTPS порт')
